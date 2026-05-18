@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: theme(colors.white);
+    --bg-surface: theme(colors.gray.50);
+    --bg-elevated: theme(colors.white);
+    --border: theme(colors.gray.200);
+    --text-primary: theme(colors.gray.900);
+    --text-muted: theme(colors.gray.500);
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --blur: blur(16px) saturate(180%);
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Outfit', system-ui, sans-serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+  body {
+    @apply bg-[var(--bg-base)] text-[var(--text-primary)] font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .glass-card {
+    @apply bg-[var(--glass-bg)] backdrop-blur-[var(--blur)] border border-[var(--glass-border)] shadow-lg;
+  }
+}
